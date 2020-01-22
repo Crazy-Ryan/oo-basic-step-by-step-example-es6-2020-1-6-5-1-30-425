@@ -1,11 +1,3 @@
-class Person {
-  constructor(name, age, klass) {
-    this.name = name;
-    this.age = age;
-  }
-  introduce() {
-    return `My name is ${this.name}. I am ${this.age} years old.`;
-  }
-}
+import Person from "../../main/practice_1/person.js";
 
 module.exports = Person;

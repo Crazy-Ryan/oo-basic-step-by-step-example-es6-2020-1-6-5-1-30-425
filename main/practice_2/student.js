@@ -1,7 +1,7 @@
-class Student {
+import Person from "../../main/practice_2/person.js";
+class Student extends Person{
   constructor(name, age, klass) {
-    this.name = name;
-    this.age = age;
+    super(name,age);
     this.klass = klass;
   }
   introduce() {
