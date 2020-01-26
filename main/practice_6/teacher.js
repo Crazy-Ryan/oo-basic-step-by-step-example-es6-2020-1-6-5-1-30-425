@@ -5,11 +5,12 @@ class Teacher extends Person {
     this.klass = klass;
   }
   introduce() {
+    let prefix = (new Person(this.name, this.age)).introduce() + ' I am a Teacher. ';
     if (this.klass) {
-      return `My name is ${this.name}. I am ${this.age} years old. I am a Teacher. I teach Class ${this.klass}.`;
+      return prefix + `I teach Class ${this.klass}.`;
     }
     else {
-      return `My name is ${this.name}. I am ${this.age} years old. I am a Teacher. I teach No Class.`;
+      return prefix + `I teach No Class.`;
     }
   }
 }
