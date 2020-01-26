@@ -1,21 +1,26 @@
-import Person from "../../main/practice_7/person.js";
+import Person from "../../main/practice_6/person.js";
 class Teacher extends Person {
   constructor(name, age, klass) {
     super(name, age);
     this.klass = klass;
   }
   introduce() {
+    let prefix = (new Person(this.name, this.age)).introduce() + ' I am a Teacher. ';
     if (this.klass) {
-      return `My name is ${this.name}. I am ${this.age} years old. I am a Teacher. I teach Class ${this.klass}.`;
+      return prefix + `I teach Class ${this.klass.number}.`;
     }
     else {
-      return `My name is ${this.name}. I am ${this.age} years old. I am a Teacher. I teach No Class.`;
+      return prefix + `I teach No Class.`;
     }
   }
-  introduceWith() {
-    if (this.klass) {
-      return `My name is ${this.name}. I am ${this.age} years old. I am a Teacher. I teach Class ${this.klass}.`;
-    } 
+  introduceWith(student) {
+    let prefix = (new Person(this.name, this.age)).introduce() + ' I am a Teacher. ';
+    if (student.klass.number === this.klass.number) {
+      return prefix + `I teach ${student.name}.`;
+    }
+    else {
+      return prefix + `I don't teach ${student.name}.`;
+    }
   }
 }
 
